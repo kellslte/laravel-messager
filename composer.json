@@ -1,0 +1,41 @@
+{
+    "name": "maximof/laravel-messager",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Favour Max-Oti",
+            "email": "favourmaxoti@outlook.com",
+            "homepage": "https://github.com/maximof"
+        }
+    ],
+    "homepage": "https://github.com/maximof/laravel-messager",
+    "keywords": ["Laravel", "LaravelMessager"],
+    "require": {
+        "illuminate/support": "~7|~8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~5|~6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maximof\\LaravelMessager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Maximof\\LaravelMessager\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Maximof\\LaravelMessager\\LaravelMessagerServiceProvider"
+            ],
+            "aliases": {
+                "LaravelMessager": "Maximof\\LaravelMessager\\Facades\\LaravelMessager"
+            }
+        }
+    }
+}
