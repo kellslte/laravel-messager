@@ -1,9 +1,8 @@
-# LaravelMessager
+# Laravel Messager
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
 This is a wrapper for a few sms service providers i Nigeria. This package is meant just for laravel so feel free to install in your app to extend its capablilities. Take a look at [contributing.md](contributing.md) to see a to do list.
 
@@ -49,6 +48,14 @@ $sms->to(08105612094)->from("Maximof")->body("Hello!");
 //this will return a true value if the message is successfully sent or will throw an exception if an error occurs
 ```
 
+To check your sms units balance 
+
+``` php
+$sms = new SmartSmsSolution();
+$sms->balance();
+//this returns a string containing the sms units balance
+//this only works for the SmartSmsSolutions class as the BulkSmsNigeria class api has no balance checking endpoint
+```
 
 ## Change log
 
@@ -85,6 +92,5 @@ MIT. Please see the [license file](license.md) for more information.
 [link-packagist]: https://packagist.org/packages/maximof/laravel-messager
 [link-downloads]: https://packagist.org/packages/maximof/laravel-messager
 [link-travis]: https://travis-ci.org/maximof/laravel-messager
-[link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/maximof
 [link-contributors]: ../../contributors
