@@ -38,7 +38,7 @@ class SmartSmsSolutions extends Messager
 
         $this->response = $this->client->json();
 
-        if ($this->client->status() == 200) {
+        if ($this->client->ok()) {
             return true;
         }else {
             return $this->client->throw();
@@ -52,9 +52,9 @@ class SmartSmsSolutions extends Messager
             "token" => $this->token
         ]);
 
-        $this->response = $this->client->json();
+        $response = $this->client->body();
 
-        return $this->response;
+        return $response;
     }
 }
 

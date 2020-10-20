@@ -11,41 +11,45 @@ class LaravelMessager
     protected $error;
     protected $response;
     protected $to;
+    protected $receivers = [];
     protected $from;
     protected $text;
     protected $baseUrl;
 
 
 
-    public function formatNumbers($numbers)
+    public function formatNumbers($number)
     {
+        $number = (string) $number;
+        $number = trim($number);
+        $number = preg_replace("/\s|\+|-/", '', $number);
 
-        $formattedNumbers =  [];
-
-        if (is_array($numbers)) {
-            foreach($numbers as $number)
-            {
-                if (preg_match("[0-9+]", $number)) {
-                    $formattedNumbers[] = $number;
-                }
-            }
-        }
-
-        return $formattedNumbers;
+        return $number;
     }
 
     public function formatBody($text)
     {
-        $text = strip_tags($text);
+        $text = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', strip_tags(trim($text)));
 
         return $text;
     }
 
     public function to($numbers)
     {
-        $this->to = implode(",", $this->formatNumbers);
+        $numbers = is_array($numbers) ? $numbers : func_get_args();
 
-        return $this->to;
+        if (count($numbers)) {
+            foreach ($numbers as $number) {
+                $this->receivers[] = $this->formatNumbers($number);
+            }
+        }
+
+        return $this->setReceivers();
+    }
+
+    private function setReceivers()
+    {
+        $this->to = implode(",", $this->receivers);
     }
 
     public function from($sender = null)

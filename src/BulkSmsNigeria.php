@@ -26,7 +26,7 @@ class BulkSmsNigeria extends Messager
 
         $this->response = $this->client->json();
 
-        if ($this->client->status() == 200) {
+        if ($this->client->ok()) {
             return true;
         }else {
             return $this->client->throw();
