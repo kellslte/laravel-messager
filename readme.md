@@ -4,7 +4,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 
-This is a wrapper for a few sms service providers i Nigeria. This package is meant just for laravel so feel free to install in your app to extend its capablilities. Take a look at [contributing.md](contributing.md) to see a to do list.
+This is a wrapper for a few sms service providers in Nigeria. This package is meant just for laravel so feel free to install in your app to extend its capablilities. Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
 
@@ -30,6 +30,12 @@ After you have published the config file, set your environmental variables.
 | Variable | Description |
 | ----------- | ----------- |
 | SMS_SENDER |  set the sms sender |
+| BULK_SMS_NIGERIA_TOKEN | set the bulk sms Nigeria api token |
+| SMART_SMS_SOLUTIONS_TOKEN | set the smart sms solutions api token |
+
+To generate an API token, for Smart sms solutions visit this [link](https://smartsmssolutions.com/sms/api-x-tokens), you can do this only after registering on their site [here](https://smartsmssolutions.com/register).
+
+To generate an API for Bulk sms Nigeria visit this [link](https://smartsmssolutions.com/register). Remember also to register [here](https://smartsmssolutions.com) 
 
 Only two service providers have been implemented in this package
 

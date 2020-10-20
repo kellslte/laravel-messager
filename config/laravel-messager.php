@@ -7,7 +7,7 @@ return [
         "dnd" => env("BULK_SMS_NIGERIA_DND", 2)
     ],
     "smart_sms" => [
-        "token" => env("SMRT_SMS_SOLUTIONS_TOKEN"),
+        "token" => env("SMART_SMS_SOLUTIONS_TOKEN"),
         "type" => 0,
         "routing" => env("SMART_SMS_ROUTE", 2)
     ]
